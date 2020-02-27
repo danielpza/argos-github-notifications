@@ -13,9 +13,15 @@ async function workit({ token }) {
       : { text: `GitHub #${notifications.length}`, color: "#2196F3" },
     bitbar.separator,
     ...notifications.map(
-      ({ unread, reason, subject: { title, latest_comment_url, type } }) => ({
-        text: `${type} ${title} ${reason}`,
-        href: latest_comment_url
+      ({
+        unread,
+        reason,
+        subject: { latest_comment_url, url, title, type }
+      }) => ({
+        text: `${type} ${title} ${reason} `,
+        href: `${url.replace("api.", "").replace("repos/", "")}#issuecomment-${
+          latest_comment_url.match(/\d*$/)[0]
+        }`
       })
     )
   ]);
