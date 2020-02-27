@@ -1,0 +1,32 @@
+{
+  "name": "argos-github-notifications",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rm -rf lib",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Daniel Perez Alvarez <danielpza@protonmail.com> (https://github.com/danielpza)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpza/argos-github-notifications.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielpza/argos-github-notifications/issues"
+  },
+  "homepage": "https://github.com/danielpza/argos-github-notifications#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^13.7.6",
+    "typescript": "^3.8.2"
+  },
+  "dependencies": {
+    "bitbar": "^1.3.0",
+    "github-api": "^3.3.0",
+    "ini": "^1.3.5"
+  }
+}
