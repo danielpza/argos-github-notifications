@@ -19,7 +19,10 @@ async function workit({ token }) {
         subject: { latest_comment_url, url, title, type }
       }) => ({
         text: `${type} ${title} ${reason} `,
-        href: url.replace("api.", "").replace("repos/", "")
+        href: url
+          .replace("api.", "")
+          .replace("repos/", "")
+          .replace("/pulls/", "/pull/")
         // + `#issuecomment-${latest_comment_url.match(/\d*$/)[0]}`
       })
     )
